@@ -4,8 +4,6 @@ let enemies = [];
 let score = 0;
 let gameOver = false;
 
-
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   player = new Player();

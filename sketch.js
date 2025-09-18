@@ -73,6 +73,24 @@ function touchStarted() {
   return false;
 }
 
+function touchMoved() {
+  if (!gameOver && touches.length > 0) {
+    player.x = touches[0].x;
+    player.x = constrain(player.x, player.size/2, width - player.size/2);
+    // y값은 고정
+  }
+  return false;
+}
+
+function mouseDragged() {
+  if (!gameOver) {
+    player.x = mouseX;
+    player.x = constrain(player.x, player.size/2, width - player.size/2);
+    // y값은 고정
+  }
+  return false;
+}
+
 class Player {
   constructor() {
     this.x = width / 2;
@@ -85,10 +103,8 @@ class Player {
     rect(this.x, this.y, this.size, this.size/2, 10);
   }
   move() {
-    if (touches.length > 0) {
-      this.x = touches[0].x;
-    }
-    this.x = constrain(this.x, this.size/2, width - this.size/2);
+    // 모바일/마우스 이동은 이벤트에서 처리
+    this.y = height - 60; // 항상 고정
   }
 }
 

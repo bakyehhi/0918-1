@@ -16,7 +16,7 @@ function setup() {
 }
 
 function draw() {
-  background(30);
+  background(255,255,0);
   if (gameOver) {
     fill(255);
     textAlign(CENTER, CENTER);
